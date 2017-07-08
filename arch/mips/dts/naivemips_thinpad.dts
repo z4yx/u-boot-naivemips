@@ -1,0 +1,32 @@
+/dts-v1/;
+
+#include "microAptiv.dtsi"
+
+/ {
+	compatible = "thucst,thinpad";
+
+	memory {
+		device_type = "memory";
+		reg = <0x0 0x00800000>;
+	};
+
+	cpuintc: interrupt-controller@0 {
+		#address-cells = <0>;
+		#interrupt-cells = <1>;
+		interrupt-controller;
+		compatible = "mti,cpu-interrupt-controller";
+	};
+
+	aliases {
+		console = &uart_dev;
+	};
+
+	uart_dev: serial@10400000 {
+		compatible = "naivemips-uart";
+		reg = <0x1fd003f8 0x8>;
+
+		clock-frequency = <11059200>;
+
+	};
+};
+

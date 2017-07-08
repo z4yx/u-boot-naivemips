@@ -1,0 +1,15 @@
+menu "NaiveMIPS platforms"
+    depends on MACH_NAIVEMIPS
+
+choice
+    prompt "Board select"
+
+config TARGET_NAIVEMIPS_THINPAD
+    bool "Thinpad board 2017"
+
+
+endchoice
+
+source "board/thucst/Kconfig"
+
+endmenu

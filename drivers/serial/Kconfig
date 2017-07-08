@@ -248,6 +248,14 @@ config DEBUG_UART_PIC32
 	  will need to provide parameters to make this work. The driver will
 	  be available until the real driver model serial is running.
 
+config DEBUG_UART_NAIVEMIPS
+	bool "NaiveMIPS"
+	depends on NAIVEMIPS_SERIAL
+	help
+	  Select this to enable a debug UART using the serial_naivemips driver. You
+	  will need to provide parameters to make this work. The driver will
+	  be available until the real driver model serial is running.
+
 config DEBUG_UART_UNIPHIER
 	bool "UniPhier on-chip UART"
 	depends on ARCH_UNIPHIER
@@ -397,6 +405,13 @@ config PIC32_SERIAL
 	default y
 	help
 	  Support for the UART found on Microchip PIC32 SoC's.
+
+config NAIVEMIPS_SERIAL
+	bool "Support for NAIVEMIPS on-chip UART"
+	depends on DM_SERIAL && MACH_NAIVEMIPS
+	default y
+	help
+	  Support for the UART found on NAIVEMIPS.
 
 config SYS_NS16550
 	bool "NS16550 UART or compatible"

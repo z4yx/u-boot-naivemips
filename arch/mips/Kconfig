@@ -123,6 +123,19 @@ config TARGET_XILFPGA
 	help
 	  This supports IMGTEC MIPSfpga platform
 
+config MACH_NAIVEMIPS
+	bool "Support NaiveMIPS"
+	select OF_CONTROL
+	select DM
+	select DM_SERIAL
+	select DM_GPIO
+	select DM_ETH
+	select SUPPORTS_LITTLE_ENDIAN
+	select SUPPORTS_CPU_MIPS32_R1
+	select ROM_EXCEPTION_VECTORS
+	help
+	  This supports NaiveMIPS platform
+
 endchoice
 
 source "board/dbau1x00/Kconfig"
@@ -135,6 +148,7 @@ source "board/qemu-mips/Kconfig"
 source "arch/mips/mach-ath79/Kconfig"
 source "arch/mips/mach-bmips/Kconfig"
 source "arch/mips/mach-pic32/Kconfig"
+source "arch/mips/mach-naivemips/Kconfig"
 
 if MIPS
 
