@@ -925,6 +925,13 @@ void board_init_r(gd_t *new_gd, ulong dest_addr)
 
 #if !defined(CONFIG_X86) && !defined(CONFIG_ARM) && !defined(CONFIG_ARM64)
 	gd = new_gd;
+
+	/*
+	 * The pre-relocation drivers may be using memory that has now gone
+	 * away. Mark serial as unavailable - this will fall back to the debug
+	 * UART if available.
+	 */
+	gd->flags &= ~GD_FLG_SERIAL_READY;
 #endif
 
 #ifdef CONFIG_NEEDS_MANUAL_RELOC
