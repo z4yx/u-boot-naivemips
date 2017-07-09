@@ -1,15 +1,5 @@
-/*
- * Copyright (C) 2016, Imagination Technologies Ltd.
- *
- * Zubair Lutfullah Kakakhel <Zubair.Kakakhel@imgtec.com>
- *
- * SPDX-License-Identifier:	GPL-2.0+
- *
- * Imagination Technologies Ltd. MIPSfpga
- */
-
-#ifndef __XILFPGA_CONFIG_H
-#define __XILFPGA_CONFIG_H
+#ifndef __NAIVEMIPS_THINPAD_CONFIG_H
+#define __NAIVEMIPS_THINPAD_CONFIG_H
 
 /* BootROM + MIG is pretty smart. DDR and Cache initialized */
 #define CONFIG_SKIP_LOWLEVEL_INIT
@@ -59,4 +49,17 @@
  */
 #define CONFIG_TIMESTAMP	/* Print image info with timestamp */
 
-#endif	/* __XILFPGA_CONFIG_H */
+/* Ethernet */
+#define CONFIG_DRIVER_DM9000
+#define CONFIG_DM9000_BASE      0xbc020100
+#define DM9000_IO           CONFIG_DM9000_BASE
+#define DM9000_DATA         (CONFIG_DM9000_BASE + 4)
+#define CONFIG_DM9000_USE_16BIT
+#define CONFIG_DM9000_NO_SROM
+#define CONFIG_NET_RETRY_COUNT      20
+#define CONFIG_RESET_PHY_R
+
+// #define CONFIG_DM9000_DEBUG
+
+#endif /* __NAIVEMIPS_THINPAD_CONFIG_H */
+
