@@ -96,6 +96,7 @@ static inline unsigned long scache_line_size(void)
 	const unsigned int cache_ops[] = { ops };			\
 	unsigned int i;							\
 									\
+	if(!lsize) break;               \
 	for (; addr <= aend; addr += lsize) {				\
 		for (i = 0; i < ARRAY_SIZE(cache_ops); i++)		\
 			mips_cache(cache_ops[i], addr);			\
