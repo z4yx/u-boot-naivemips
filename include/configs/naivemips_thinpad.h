@@ -31,6 +31,7 @@
  * Commands
  */
 //#define CONFIG_SYS_LONGHELP		/* undef to save memory */
+#define CONFIG_CMDLINE_EDITING
 
 /*------------------------------------------------------------
  * Console Configuration
@@ -70,6 +71,13 @@
 #define SL811_DAT             (0xbc020004)
 
 // #define SL811_DEBUG
+
+/* Flash */
+#define CONFIG_FLASH_CFI_DRIVER
+#define CONFIG_SYS_FLASH_CFI
+#define CONFIG_SYS_FLASH_USE_BUFFER_WRITE
+#define CONFIG_SYS_MAX_FLASH_BANKS_DETECT   1
+#define CONFIG_SYS_MAX_FLASH_SECT           64
 
 // #define DEBUG
 

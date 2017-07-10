@@ -28,5 +28,10 @@
 		clock-frequency = <11059200>;
 
 	};
+	flash@1e000000 {
+		compatible = "cfi-flash";
+		reg = <0x1e000000 0x800000>;
+		bank-width = <2>;
+	};
 };
 
