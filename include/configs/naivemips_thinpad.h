@@ -61,5 +61,14 @@
 
 // #define CONFIG_DM9000_DEBUG
 
+/* USB */
+#define CONFIG_USB_SL811HS
+#define SL811_ADR             (0xbc020000)
+#define SL811_DAT             (0xbc020004)
+
+// #define SL811_DEBUG
+
+// #define DEBUG
+
 #endif /* __NAIVEMIPS_THINPAD_CONFIG_H */
 

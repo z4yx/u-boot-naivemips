@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# U-Boot 2017.07-rc2 Configuration
+# U-Boot 2017.07-rc3 Configuration
 #
 CONFIG_HAVE_ARCH_IOREMAP=y
 # CONFIG_ARC is not set
@@ -184,9 +184,9 @@ CONFIG_AUTOBOOT=y
 #
 # Info commands
 #
-CONFIG_CMD_BDI=y
+# CONFIG_CMD_BDI is not set
 # CONFIG_CMD_CONFIG is not set
-CONFIG_CMD_CONSOLE=y
+# CONFIG_CMD_CONSOLE is not set
 # CONFIG_CMD_CPU is not set
 # CONFIG_CMD_LICENSE is not set
 
@@ -197,7 +197,7 @@ CONFIG_CMD_BOOTD=y
 CONFIG_CMD_BOOTM=y
 # CONFIG_CMD_BOOTZ is not set
 # CONFIG_CMD_BOOTMENU is not set
-CONFIG_CMD_ELF=y
+# CONFIG_CMD_ELF is not set
 CONFIG_CMD_FDT=y
 CONFIG_CMD_GO=y
 CONFIG_CMD_RUN=y
@@ -244,7 +244,7 @@ CONFIG_CMD_MEMINFO=y
 # Device access commands
 #
 # CONFIG_CMD_CLK is not set
-CONFIG_CMD_DM=y
+# CONFIG_CMD_DM is not set
 # CONFIG_CMD_DEMO is not set
 # CONFIG_CMD_IDE is not set
 # CONFIG_CMD_IO is not set
@@ -260,7 +260,7 @@ CONFIG_CMD_LOADS=y
 # CONFIG_CMD_SF is not set
 # CONFIG_CMD_SPI is not set
 # CONFIG_CMD_I2C is not set
-# CONFIG_CMD_USB is not set
+CONFIG_CMD_USB=y
 # CONFIG_CMD_DFU is not set
 # CONFIG_CMD_USB_MASS_STORAGE is not set
 # CONFIG_CMD_FPGA is not set
@@ -286,7 +286,7 @@ CONFIG_CMD_NET=y
 # CONFIG_CMD_RARP is not set
 CONFIG_CMD_DHCP=y
 # CONFIG_CMD_PXE is not set
-CONFIG_CMD_NFS=y
+# CONFIG_CMD_NFS is not set
 CONFIG_CMD_MII=y
 CONFIG_CMD_PING=y
 # CONFIG_CMD_CDP is not set
@@ -303,7 +303,7 @@ CONFIG_CMD_PING=y
 # CONFIG_CMD_DISPLAY is not set
 # CONFIG_CMD_LED is not set
 # CONFIG_CMD_DATE is not set
-CONFIG_CMD_TIME=y
+# CONFIG_CMD_TIME is not set
 # CONFIG_CMD_GETTIME is not set
 CONFIG_CMD_MISC=y
 # CONFIG_CMD_TIMER is not set
@@ -329,8 +329,8 @@ CONFIG_CMD_MISC=y
 #
 # CONFIG_CMD_EXT2 is not set
 # CONFIG_CMD_EXT4 is not set
-# CONFIG_CMD_FAT is not set
-# CONFIG_CMD_FS_GENERIC is not set
+CONFIG_CMD_FAT=y
+CONFIG_CMD_FS_GENERIC=y
 # CONFIG_CMD_FS_UUID is not set
 # CONFIG_CMD_JFFS2 is not set
 
@@ -347,7 +347,7 @@ CONFIG_CMD_MISC=y
 #
 CONFIG_PARTITIONS=y
 # CONFIG_MAC_PARTITION is not set
-# CONFIG_DOS_PARTITION is not set
+CONFIG_DOS_PARTITION=y
 # CONFIG_ISO_PARTITION is not set
 # CONFIG_AMIGA_PARTITION is not set
 # CONFIG_EFI_PARTITION is not set
@@ -549,24 +549,17 @@ CONFIG_PHYLIB=y
 # CONFIG_PHY_TI is not set
 # CONFIG_PHY_VITESSE is not set
 # CONFIG_PHY_XILINX is not set
-# CONFIG_PHY_FIXED is not set
-CONFIG_DM_ETH=y
+# CONFIG_DM_ETH is not set
 CONFIG_NETDEVICES=y
 # CONFIG_PHY_GIGE is not set
-# CONFIG_ALTERA_TSE is not set
-# CONFIG_DWC_ETH_QOS is not set
 # CONFIG_E1000 is not set
 # CONFIG_ETH_DESIGNWARE is not set
 # CONFIG_ETHOC is not set
 # CONFIG_FTMAC100 is not set
-# CONFIG_MACB is not set
 # CONFIG_RGMII is not set
 # CONFIG_RTL8139 is not set
 # CONFIG_RTL8169 is not set
 # CONFIG_SUN7I_GMAC is not set
-# CONFIG_SUN4I_EMAC is not set
-# CONFIG_SUN8I_EMAC is not set
-CONFIG_XILINX_EMACLITE=y
 # CONFIG_PCI is not set
 
 #
@@ -638,7 +631,7 @@ CONFIG_DEBUG_UART_BASE=0xbfd003f8
 CONFIG_DEBUG_UART_CLOCK=11059200
 CONFIG_DEBUG_UART_SHIFT=0
 # CONFIG_DEBUG_UART_BOARD_INIT is not set
-CONFIG_DEBUG_UART_ANNOUNCE=y
+# CONFIG_DEBUG_UART_ANNOUNCE is not set
 # CONFIG_DEBUG_UART_SKIP_INIT is not set
 # CONFIG_ALTERA_JTAG_UART is not set
 # CONFIG_ALTERA_UART is not set
@@ -685,7 +678,33 @@ CONFIG_NAIVEMIPS_SERIAL=y
 #
 # TPM support
 #
-# CONFIG_USB is not set
+CONFIG_USB=y
+# CONFIG_DM_USB is not set
+
+#
+# USB Host Controller Drivers
+#
+# CONFIG_USB_XHCI_HCD is not set
+# CONFIG_USB_EHCI_HCD is not set
+# CONFIG_USB_OHCI_HCD is not set
+# CONFIG_USB_UHCI_HCD is not set
+
+#
+# MUSB Controller Driver
+#
+# CONFIG_USB_MUSB_HOST is not set
+# CONFIG_USB_MUSB_GADGET is not set
+
+#
+# ULPI drivers
+#
+
+#
+# USB peripherals
+#
+CONFIG_USB_STORAGE=y
+# CONFIG_USB_KEYBOARD is not set
+# CONFIG_USB_GADGET is not set
 
 #
 # Graphics support
@@ -717,7 +736,9 @@ CONFIG_NAIVEMIPS_SERIAL=y
 # File systems
 #
 # CONFIG_FS_CBFS is not set
-# CONFIG_FS_FAT is not set
+CONFIG_FS_FAT=y
+# CONFIG_FAT_WRITE is not set
+CONFIG_FS_FAT_MAX_CLUSTSIZE=65536
 # CONFIG_FS_JFFS2 is not set
 # CONFIG_FS_CRAMFS is not set
 
