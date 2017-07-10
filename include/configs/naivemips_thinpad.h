@@ -43,6 +43,9 @@
  */
 #define CONFIG_ENV_IS_NOWHERE	1
 #define CONFIG_ENV_SIZE		0x4000
+#define CONFIG_EXTRA_ENV_SETTINGS \
+    "autoload=no\0" \
+
 
 /* ---------------------------------------------------------------------
  * Board boot configuration
