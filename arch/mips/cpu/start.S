@@ -155,8 +155,13 @@ reset:
 1:	mfc0	t0, CP0_DIAGNOSTIC, 3
 	and	t0, t0, (1 << 31)
 #else
+#ifdef CONFIG_CPU_MIPS32_R1
+	/* EBase not exists in MIPS32 Release 1 */
+1:  or      t0, zero, zero
+#else
 1:	mfc0	t0, CP0_EBASE
 	and	t0, t0, EBASE_CPUNUM
+#endif
 #endif
 
 	/* Hang if this isn't the first CPU in the system */

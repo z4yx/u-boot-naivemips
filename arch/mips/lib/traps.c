@@ -85,6 +85,7 @@ void do_ejtag_debug(const struct pt_regs *regs)
 	       field, depc, debug);
 }
 
+#ifndef CONFIG_CPU_MIPS32_R1
 static void set_handler(unsigned long offset, void *addr, unsigned long size)
 {
 	unsigned long ebase = gd->irq_sp;
@@ -92,9 +93,11 @@ static void set_handler(unsigned long offset, void *addr, unsigned long size)
 	memcpy((void *)(ebase + offset), addr, size);
 	flush_cache(ebase + offset, size);
 }
+#endif
 
 void trap_init(ulong reloc_addr)
 {
+#ifndef CONFIG_CPU_MIPS32_R1
 	unsigned long ebase = gd->irq_sp;
 
 	set_handler(0x180, &except_vec3_generic, 0x80);
@@ -103,4 +106,5 @@ void trap_init(ulong reloc_addr)
 	write_c0_ebase(ebase);
 	clear_c0_status(ST0_BEV);
 	execution_hazard_barrier();
+#endif
 }
