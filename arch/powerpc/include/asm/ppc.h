@@ -13,6 +13,9 @@
 
 #ifndef __ASSEMBLY__
 
+#if defined(CONFIG_8xx)
+#include <asm/8xx_immap.h>
+#endif
 #ifdef CONFIG_MPC86xx
 #include <mpc86xx.h>
 #include <asm/immap_86xx.h>
@@ -35,6 +38,9 @@
 #include <asm/arch/immap_lsch2.h>
 #endif
 
+#if defined(CONFIG_8xx)
+uint get_immr(uint);
+#endif
 uint get_pvr(void);
 uint get_svr(void);
 uint rd_ic_cst(void);

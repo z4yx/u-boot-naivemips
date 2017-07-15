@@ -83,9 +83,6 @@ static inline void print_bi_mem(const bd_t *bd)
 #elif defined(CONFIG_ARC)
 	print_num("mem start",		(ulong)bd->bi_memstart);
 	print_lnum("mem size",		(u64)bd->bi_memsize);
-#elif defined(CONFIG_AVR32)
-	print_num("memstart",		(ulong)bd->bi_dram[0].start);
-	print_lnum("memsize",		(u64)bd->bi_dram[0].size);
 #else
 	print_num("memstart",		(ulong)bd->bi_memstart);
 	print_lnum("memsize",		(u64)bd->bi_memsize);
@@ -183,7 +180,7 @@ int do_bdinfo(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
 	print_bi_flash(bd);
 	print_num("sramstart",		bd->bi_sramstart);
 	print_num("sramsize",		bd->bi_sramsize);
-#if	defined(CONFIG_E500)
+#if	defined(CONFIG_8xx) || defined(CONFIG_E500)
 	print_num("immr_base",		bd->bi_immr_base);
 #endif
 	print_num("bootflags",		bd->bi_bootflags);
@@ -297,14 +294,6 @@ int do_bdinfo(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
 	print_num("relocaddr", gd->relocaddr);
 	print_num("reloc off", gd->reloc_off);
 
-	return 0;
-}
-
-#elif defined(CONFIG_AVR32)
-
-int do_bdinfo(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
-{
-	print_std_bdinfo(gd->bd);
 	return 0;
 }
 

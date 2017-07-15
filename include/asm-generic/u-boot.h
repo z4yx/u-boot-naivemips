@@ -32,16 +32,12 @@ typedef struct bd_info {
 	unsigned long	bi_flashoffset; /* reserved area for startup monitor */
 	unsigned long	bi_sramstart;	/* start of SRAM memory */
 	unsigned long	bi_sramsize;	/* size	 of SRAM memory */
-#ifdef CONFIG_AVR32
-	unsigned char   bi_phy_id[4];   /* PHY address for ATAG_ETHERNET */
-	unsigned long   bi_board_number;/* ATAG_BOARDINFO */
-#endif
 #ifdef CONFIG_ARM
 	unsigned long	bi_arm_freq; /* arm frequency */
 	unsigned long	bi_dsp_freq; /* dsp core frequency */
 	unsigned long	bi_ddr_freq; /* ddr frequency */
 #endif
-#if defined(CONFIG_E500) || defined(CONFIG_MPC86xx)
+#if defined(CONFIG_8xx) || defined(CONFIG_E500) || defined(CONFIG_MPC86xx)
 	unsigned long	bi_immr_base;	/* base of IMMR register */
 #endif
 #if defined(CONFIG_M68K)
