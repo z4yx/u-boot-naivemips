@@ -46,7 +46,11 @@
 #define CONFIG_ENV_SIZE		0x4000
 #define CONFIG_EXTRA_ENV_SETTINGS \
     "autoload=no\0" \
-
+    "s_linux=setenv bootfile mips-linux.ub;setenv loadaddr 0x800FFFC0\0" \
+    "s_ucore=setenv bootfile ucore.ub;setenv loadaddr 0x80000000\0" \
+    "serverip=192.168.1.30\0" \
+    "ipaddr=192.168.1.60\0" \
+    "netmask=255.255.255.0\0"
 
 /* ---------------------------------------------------------------------
  * Board boot configuration
