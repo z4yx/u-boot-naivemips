@@ -1,11 +1,10 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# U-Boot 2017.07-rc3 Configuration
+# U-Boot 2017.07 Configuration
 #
 CONFIG_HAVE_ARCH_IOREMAP=y
 # CONFIG_ARC is not set
 # CONFIG_ARM is not set
-# CONFIG_AVR32 is not set
 # CONFIG_M68K is not set
 # CONFIG_MICROBLAZE is not set
 CONFIG_MIPS=y
@@ -210,11 +209,11 @@ CONFIG_CMD_XIMG=y
 # Environment commands
 #
 # CONFIG_CMD_ASKENV is not set
-CONFIG_CMD_EXPORTENV=y
-CONFIG_CMD_IMPORTENV=y
+# CONFIG_CMD_EXPORTENV is not set
+# CONFIG_CMD_IMPORTENV is not set
 CONFIG_CMD_EDITENV=y
 # CONFIG_CMD_GREPENV is not set
-# CONFIG_CMD_SAVEENV is not set
+CONFIG_CMD_SAVEENV=y
 CONFIG_CMD_ENV_EXISTS=y
 # CONFIG_CMD_ENV_CALLBACK is not set
 # CONFIG_CMD_ENV_FLAGS is not set
@@ -231,7 +230,7 @@ CONFIG_CMD_CRC32=y
 # CONFIG_LOOPW is not set
 # CONFIG_CMD_MEMTEST is not set
 # CONFIG_CMD_MX_CYCLIC is not set
-CONFIG_CMD_MEMINFO=y
+# CONFIG_CMD_MEMINFO is not set
 
 #
 # Compression commands
@@ -274,7 +273,7 @@ CONFIG_CMD_USB=y
 #
 CONFIG_CMD_ECHO=y
 CONFIG_CMD_ITEST=y
-CONFIG_CMD_SOURCE=y
+# CONFIG_CMD_SOURCE is not set
 CONFIG_CMD_SETEXPR=y
 
 #
@@ -287,7 +286,7 @@ CONFIG_CMD_NET=y
 CONFIG_CMD_DHCP=y
 # CONFIG_CMD_PXE is not set
 # CONFIG_CMD_NFS is not set
-CONFIG_CMD_MII=y
+# CONFIG_CMD_MII is not set
 CONFIG_CMD_PING=y
 # CONFIG_CMD_CDP is not set
 # CONFIG_CMD_SNTP is not set
