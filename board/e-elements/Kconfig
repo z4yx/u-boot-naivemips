@@ -1,0 +1,15 @@
+if TARGET_NAIVEMIPS_K7EES
+
+config SYS_BOARD
+    default "thinpad_k7"
+
+config SYS_VENDOR
+    default "e-elements"
+
+config SYS_CONFIG_NAME
+    default "naivemips_k7ees"
+
+config SYS_TEXT_BASE
+    default 0x80000000
+
+endif
