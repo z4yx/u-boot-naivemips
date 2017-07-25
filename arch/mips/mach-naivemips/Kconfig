@@ -10,9 +10,13 @@ config TARGET_NAIVEMIPS_THINPAD
 config TARGET_NAIVEMIPS_K7EES
     bool "Thinpad board with Kintex-7 by E-Elements"
 
+config TARGET_NAIVEMIPS_NSCSCC
+    bool "FPGA-K7 board used in NSCSCC"
+
 endchoice
 
 source "board/thucst/Kconfig"
 source "board/e-elements/Kconfig"
+source "board/nscscc/Kconfig"
 
 endmenu

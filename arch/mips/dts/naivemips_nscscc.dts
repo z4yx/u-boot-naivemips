@@ -1,0 +1,56 @@
+/dts-v1/;
+
+#include "microAptiv.dtsi"
+
+/ {
+	compatible = "nscscc,fpga-a7";
+
+	memory {
+		device_type = "memory";
+		reg = <0x0 0x8000000>;
+	};
+
+	cpuintc: interrupt-controller@0 {
+		#address-cells = <0>;
+		#interrupt-cells = <1>;
+		interrupt-controller;
+		compatible = "mti,cpu-interrupt-controller";
+	};
+
+	aliases {
+		console = &uart_dev;
+	};
+
+	uart_dev: serial@1fd03000 {
+		compatible = "ns16550";
+		reg = <0x1fd03000 0x1000>;
+		interrupts = <4 0>;
+		reg-shift = <2>;
+		clock-frequency = <100000000>;
+	};
+	axi_ethernetlite: ethernet@1c030000 {
+		compatible = "xlnx,xps-ethernetlite-1.00.a";
+		device_type = "network";
+		local-mac-address = [08 86 4C 0D F7 09];
+		phy-handle = <&phy0>;
+		reg = <0x1c030000 0x10000>;
+		xlnx,duplex = <0x1>;
+		xlnx,include-global-buffers = <0x1>;
+		xlnx,include-internal-loopback = <0x0>;
+		xlnx,include-mdio = <0x1>;
+		xlnx,instance = "axi_ethernetlite_inst";
+		xlnx,rx-ping-pong = <0x1>;
+		xlnx,s-axi-id-width = <0x1>;
+		xlnx,tx-ping-pong = <0x1>;
+		xlnx,use-internal = <0x0>;
+		mdio {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			phy0: phy@1 {
+				device_type = "ethernet-phy";
+				reg = <1>;
+			} ;
+		} ;
+    } ;
+};
+
