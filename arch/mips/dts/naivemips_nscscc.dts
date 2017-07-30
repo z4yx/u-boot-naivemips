@@ -35,6 +35,7 @@
 		compatible = "xlnx,xps-spi-2.00.a";
 		reg = <0x1e000000 0x1000>;
 		fifo-size = <256>;
+		xlnx,spi-mode = <2>; //quad spi mode
 
         spi-flash@0 {
             compatible = "jedec,spi-nor";
