@@ -19,6 +19,7 @@
 
 	aliases {
 		console = &uart_dev;
+		spi0 = &axi_qspi;
 	};
 
 	uart_dev: serial@1fd03000 {
@@ -27,6 +28,19 @@
 		interrupts = <4 0>;
 		reg-shift = <2>;
 		clock-frequency = <100000000>;
+	};
+	axi_qspi: spi@1e000000 {
+        #address-cells = <1>;
+        #size-cells = <0>;
+		compatible = "xlnx,xps-spi-2.00.a";
+		reg = <0x1e000000 0x1000>;
+		fifo-size = <256>;
+
+        spi-flash@0 {
+            compatible = "jedec,spi-nor";
+            reg = <0>; /* Chip select 0 */
+            spi-max-frequency = <30000000>;
+        };
 	};
 	axi_ethernetlite: ethernet@1c030000 {
 		compatible = "xlnx,xps-ethernetlite-1.00.a";
