@@ -51,8 +51,8 @@
  */
 // #define CONFIG_ENV_IS_NOWHERE      1
 #define CONFIG_ENV_IS_IN_SPI_FLASH 1
-#define CONFIG_ENV_SECT_SIZE       0x1000
-#define CONFIG_ENV_OFFSET          (0x1000000-CONFIG_ENV_SECT_SIZE)  /* last sector of SPI flash */
+#define CONFIG_ENV_SECT_SIZE       0x10000
+#define CONFIG_ENV_OFFSET          0
 #define CONFIG_ENV_SIZE            0x1000
 #define CONFIG_EXTRA_ENV_SETTINGS \
     "autoload=no\0" \
