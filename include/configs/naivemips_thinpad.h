@@ -47,7 +47,7 @@
 /*
 //Environment variables in Flash
 #define CONFIG_ENV_IS_IN_FLASH  1
-#define CONFIG_ENV_ADDR         0xBE7E0000  /* last sector of 8M flash */
+#define CONFIG_ENV_ADDR         0xBE7E0000  // last sector of 8M flash
 #define CONFIG_ENV_SECT_SIZE    0x20000
 */
 #define CONFIG_ENV_SIZE		0x4000
